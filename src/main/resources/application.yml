@@ -9,6 +9,8 @@ spring:
 ---
 spring:
   profiles: local
+  datasource:
+    data: classpath:data-seeder.sql
   jpa:
     show-sql: true
     hibernate:
