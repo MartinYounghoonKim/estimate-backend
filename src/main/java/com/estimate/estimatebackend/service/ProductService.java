@@ -33,4 +33,13 @@ public class ProductService {
         productRepository.deleteById(id);
         return id;
     }
+    @Transactional
+    public Product updateProduct (Long id, ProductDTO productDTO) {
+        Product product = Product.builder()
+                .id(id)
+                .name(productDTO.getName())
+                .rate(productDTO.getRate())
+                .build();
+        return productRepository.save(product);
+    }
 }
