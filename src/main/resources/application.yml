@@ -1,0 +1,18 @@
+server:
+  port: 8081
+
+spring:
+  profiles:
+    active: local
+
+# Local ENV
+---
+spring:
+  profiles: local
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+    h2:
+      console:
+        enabled: true
