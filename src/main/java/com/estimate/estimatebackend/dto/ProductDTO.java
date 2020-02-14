@@ -1,6 +1,6 @@
 package com.estimate.estimatebackend.dto;
 
-import com.estimate.estimatebackend.entity.ProductEntity;
+import com.estimate.estimatebackend.entity.Product;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,8 +20,8 @@ public class ProductDTO {
     @NotNull(message = "제품의 용량을 입력해주세요.")
     private String rate;
 
-    public ProductEntity toEntity () {
-        return ProductEntity.builder()
+    public Product toEntity () {
+        return Product.builder()
                 .name(name)
                 .rate(rate)
                 .build();

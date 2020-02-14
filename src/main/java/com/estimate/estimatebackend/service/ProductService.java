@@ -1,6 +1,7 @@
 package com.estimate.estimatebackend.service;
 
-import com.estimate.estimatebackend.entity.ProductEntity;
+import com.estimate.estimatebackend.dto.ProductDTO;
+import com.estimate.estimatebackend.entity.Product;
 import com.estimate.estimatebackend.repository.ProductRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
