@@ -15,7 +15,16 @@ public class ProductService {
     private ProductRepository productRepository;
 
     @Transactional
-    public List<ProductEntity> getProducts () {
+    public ProductDTO createProduct (ProductDTO productDTO) {
+        Long id = productRepository.save(productDTO.toEntity()).getId();
+        return productDTO.builder()
+                .name(productDTO.getName())
+                .id(id)
+                .rate(productDTO.getRate())
+                .build();
+    }
+    @Transactional
+    public List<Product> getProducts () {
         return productRepository.findAll();
     }
 }

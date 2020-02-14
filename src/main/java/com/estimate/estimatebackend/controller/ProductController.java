@@ -19,5 +19,8 @@ public class ProductController {
     public WrappedResponseDTO<List<Product>> getProducts () {
         return WrappedResponseDTO.success(productService.getProducts());
     }
-
+    @PostMapping
+    public WrappedResponseDTO<ProductDTO> createProduct (@RequestBody ProductDTO productDTO) {
+        return WrappedResponseDTO.success(productService.createProduct(productDTO));
+    }
 }
