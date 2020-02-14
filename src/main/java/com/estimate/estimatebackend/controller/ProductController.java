@@ -23,4 +23,10 @@ public class ProductController {
     public WrappedResponseDTO<ProductDTO> createProduct (@RequestBody ProductDTO productDTO) {
         return WrappedResponseDTO.success(productService.createProduct(productDTO));
     }
+
+    @DeleteMapping("/{id}")
+    public WrappedResponseDTO deleteProduct (@PathVariable Long id) {
+        productService.deleteProduct(id);
+        return WrappedResponseDTO.success(null);
+    }
 }

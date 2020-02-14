@@ -27,4 +27,10 @@ public class ProductService {
     public List<Product> getProducts () {
         return productRepository.findAll();
     }
+
+    @Transactional
+    public Long deleteProduct (Long id) {
+        productRepository.deleteById(id);
+        return id;
+    }
 }
